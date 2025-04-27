@@ -1,0 +1,439 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a base font size and family */
+html {
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.5;
+}
+
+/* Body and container */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Anchor tag styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chat-page {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header styles */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 15px 20px;
+}
+
+.archive-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: url(../images/add_achive_button_bg.png) no-repeat;
+  background-size: cover;
+  border-radius: 30px;
+  color: #000000;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.archive-button:active {
+  transform: scale(0.99);
+  opacity: 0.8;
+}
+
+.archive-button img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.notification-container {
+  /* width: 60px; */
+  /* height: 60px; */
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-icon {
+  width: 54px;
+  height: 54px;
+}
+
+.notification-icon:active {
+  transform: scale(0.97);
+  opacity: 0.8;
+}
+
+/* Online Members Section */
+.members-section {
+  margin-top: 30px;
+}
+
+.members-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.members-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.members-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.member-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+  transition: all 0.3s ease;
+}
+
+.member-item:active {
+  transform: scale(0.99);
+  opacity: 0.8;
+}
+
+.member-avatar {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  /* border-radius: 50%; */
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient-border {
+  background: url(../images/home_2_online_members.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.plus-icon {
+  font-size: 36px;
+  color: #000;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.status-indicator.online {
+  background-color: #4cdb89;
+}
+
+.status-indicator.busy {
+  background-color: #ffad49;
+}
+
+.status-indicator.offline {
+  background-color: #ff5c5c;
+}
+
+.status-indicator-2 {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.status-indicator-2.online {
+  background-color: #4cdb89;
+}
+
+.status-indicator-2.busy {
+  background-color: #ffad49;
+}
+
+.status-indicator-2.offline {
+  background-color: #ff5c5c;
+}
+
+.member-name {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  color: #000000;
+}
+
+.member-name span {
+  font-family: "Plus Jakarta Display", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #00000080;
+}
+
+/* Chat Section */
+.chat-section {
+  margin-top: 40px;
+  background-color: #0a0a0a;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding-top: 36px;
+  min-height: calc(100vh - 395px);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.chat-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.archive-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: url(../images/add_achive_button_bg.png) no-repeat;
+  background-size: cover;
+  border-radius: 30px;
+  color: #000000;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.archive-button:active {
+  transform: scale(0.99);
+  opacity: 0.8;
+}
+
+.archive-button img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+/* Chat List */
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.chat-item:active {
+  transform: scale(0.99);
+  opacity: 0.8;
+}
+
+.chat-avatar {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.chat-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chat-content {
+  flex-grow: 1;
+}
+
+/* Chat content styling */
+.chat-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Chat info (name and notification) */
+.chat-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-info h3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Message container (time and message) */
+.message-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-time {
+  font-size: 14px;
+  color: #888888;
+}
+
+.notification-badge {
+  background-color: #4cdb89;
+  color: #000000;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chat-message {
+  font-size: 14px;
+  color: #888888;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.message-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 375px) {
+  .profile-text h2 {
+    font-size: 20px;
+  }
+
+  .members-section h2,
+  .chat-header h2 {
+    font-size: 24px;
+  }
+
+  .member-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .archive-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .chat-avatar {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile-text h2 {
+    font-size: 18px;
+  }
+
+  .members-section h2,
+  .chat-header h2 {
+    font-size: 22px;
+  }
+
+  .member-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .member-name {
+    font-size: 12px;
+  }
+
+  .archive-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .archive-button span {
+    display: none;
+  }
+
+  .chat-info h3 {
+    font-size: 14px;
+  }
+
+  .chat-time {
+    font-size: 12px;
+  }
+
+  .chat-message {
+    font-size: 12px;
+  }
+}

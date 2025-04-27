@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVI</title>
+    <link rel="stylesheet" href="./css/home_4.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="archive-button">
+                    <img src="./images/icons/menu_board.svg" alt="Archive Icon">
+                    <span>Archive Chat</span>
+                </div>
+                <img class="notification-icon" src="./images/icons/notification.svg" alt="Notification Icon">
+            </div>
+            <div class="task-summary">
+                <div class="task-progress">
+                    <div class="progress-circle">
+                        <!-- SVG Gradient Definitions -->
+                        <svg width="0" height="0" style="position: absolute;">
+                            <defs>
+                                <linearGradient id="gradient" gradientTransform="rotate(90)">
+                                    <stop offset="0%" stop-color="#59bdf1" />
+                                    <stop offset="33%" stop-color="#ab74de" />
+                                    <stop offset="66%" stop-color="#ff8880" />
+                                    <stop offset="100%" stop-color="#ffdd81" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle class="progress-background" cx="50" cy="50" r="45"></circle>
+                            <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+                        </svg>
+                        <span class="progress-percentage">70%</span>
+                    </div>
+                </div>
+
+                <div class="task-info">
+                    <h3 class="task-title">Task</h3>
+                    <h3 class="task-title-2">Completed</h3>
+                </div>
+
+                <div class="task-meta">
+                    <img class="task-icon" src="./images/icons/menu_board.svg" alt="Menu Board Icon">
+                    <span class="task-date">Mar 22</span>
+                </div>
+            </div>
+
+            <!-- Calendar Section -->
+            <div class="calendar-section">
+                <div class="calendar-container" id="calendar">
+                    <div class="day-item" data-day="12">
+                        <div class="day-number">12</div>
+                        <div class="day-name">Mon</div>
+                    </div>
+                    <div class="day-item" data-day="13">
+                        <div class="day-number">13</div>
+                        <div class="day-name">Tue</div>
+                    </div>
+                    <div class="day-item active" data-day="14">
+                        <div class="day-number">14</div>
+                        <div class="day-name">Wed</div>
+                    </div>
+                    <div class="day-item" data-day="15">
+                        <div class="day-number">15</div>
+                        <div class="day-name">Thu</div>
+                    </div>
+                    <div class="day-item" data-day="16">
+                        <div class="day-number">16</div>
+                        <div class="day-name">Fri</div>
+                    </div>
+                    <div class="day-item" data-day="17">
+                        <div class="day-number">17</div>
+                        <div class="day-name">Sat</div>
+                    </div>
+                    <div class="day-item" data-day="19">
+                        <div class="day-number">18</div>
+                        <div class="day-name">Sun</div>
+                    </div>
+                    <div class="day-item" data-day="20">
+                        <div class="day-number">18</div>
+                        <div class="day-name">Sun</div>
+                    </div>
+                    <div class="day-item" data-day="21">
+                        <div class="day-number">18</div>
+                        <div class="day-name">Sun</div>
+                    </div>
+                    <div class="day-item" data-day="22">
+                        <div class="day-number">18</div>
+                        <div class="day-name">Sun</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="task-section container">
+        <div class="task-header">
+            <div class="task-summary-2">
+                <h2>Your Tasks</h2>
+                <p>(7/10) Completed</p>
+            </div>
+
+            <div class="task-actions">
+                <button class="btn-left">Left</button>
+                <button class="btn-done">Done</button>
+            </div>
+        </div>
+        <!-- Inside the task-section, after the task-header div -->
+        <div class="tasks-container">
+            <!-- Task Item 1 -->
+            <div class="task-item">
+                <div class="task-progress-circle blue">
+                    <svg width="70" height="70" viewBox="0 0 70 70">
+                        <circle class="progress-background" cx="35" cy="35" r="30"></circle>
+                        <circle class="progress-bar" cx="35" cy="35" r="30" style="stroke-dashoffset: 84.6"></circle>
+                    </svg>
+                    <span class="task-percentage">70%</span>
+                </div>
+                <div class="task-details">
+                    <h3>Chat Application</h3>
+                    <p class="overdue">• Over due<span>, Mar 13, 2022</span></p>
+                </div>
+            </div>
+
+            <!-- Task Item 2 -->
+            <div class="task-item">
+                <div class="task-progress-circle orange">
+                    <svg width="70" height="70" viewBox="0 0 70 70">
+                        <circle class="progress-background" cx="35" cy="35" r="30"></circle>
+                        <circle class="progress-bar" cx="35" cy="35" r="30" style="stroke-dashoffset: 56.4"></circle>
+                    </svg>
+                    <span class="task-percentage">80%</span>
+                </div>
+                <div class="task-details">
+                    <h3>NFT Website</h3>
+                    <p class="scheduled">• Scheduled<span>, Mar 16, 2022</span></p>
+                </div>
+            </div>
+
+            <!-- Task Item 3 -->
+            <div class="task-item-last">
+                <div class="task-progress-circle cyan">
+                    <svg width="70" height="70" viewBox="0 0 70 70">
+                        <circle class="progress-background" cx="35" cy="35" r="30"></circle>
+                        <circle class="progress-bar" cx="35" cy="35" r="30" style="stroke-dashoffset: 5.64"></circle>
+                    </svg>
+                    <span class="task-percentage">98%</span>
+                </div>
+                <div class="task-details">
+                    <h3>NFT Website</h3>
+                    <p class="completing">• Completing<span>, Mar 16, 2022</span></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="./js/home_4.js"></script>
+</body>
+
+</html>
