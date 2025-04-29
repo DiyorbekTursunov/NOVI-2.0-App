@@ -3,8 +3,10 @@ const chatContainer = document.getElementById("chat-container");
 const messageInput = document.getElementById("message-input");
 const sendButton = document.getElementById("send-button");
 
-// API constants - We'll now use the Netlify function instead of direct API
-const PROXY_URL = "/api/chat-proxy";
+// API constants
+const API_URL = "https://fix-cors-for-novi.vercel.app/api/proxy";
+const CSRF_TOKEN =
+  "N8q096M9Cjb93GKTKQDd8FmMGGkIxPH8cjLzRUSGXCgck5Y3Qfiv7sybJYfbqjgC";
 
 // Streaming simulation settings
 const TYPING_SPEED_MIN = 20; // Minimum milliseconds per character
@@ -198,61 +200,68 @@ messageInput.addEventListener("input", function () {
   toggleButtonActive(this.value.trim().length > 0);
 });
 
-// Function to send message to API via the Netlify proxy function
+// Function to send message to API
 async function sendMessage(message) {
-  if (!message.trim()) return;
+    if (!message.trim()) return;
 
-  // Add user message to chat
-  addUserMessage(message);
+    // Add user message to chat
+    addUserMessage(message);
 
-  // Clear input field
-  messageInput.value = "";
-  toggleButtonActive(false);
+    // Clear input field
+    messageInput.value = "";
+    toggleButtonActive(false);
 
-  // Show loading indicator
-  showLoading();
+    // Show loading indicator
+    showLoading();
 
-  try {
-    // Use fetch API with JSON instead of FormData (for Netlify function)
-    const response = await fetch(PROXY_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({ message: message })
-    });
+    try {
+      // Prepare the data to send as JSON
+      const data = {
+        message: message,
+      };
 
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
+      // Use fetch API to send the POST request
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Set content-type to application/json
+          "X-CSRFTOKEN": CSRF_TOKEN,
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data), // Send data as JSON
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      const aiResponse = responseData.ai_response;
+
+      // Hide loading indicator
+      hideLoading();
+
+      // Create AI message container with cursor
+      const { messageText, cursor } = createAIMessageContainer();
+
+      // Simulate streaming text
+      await simulateStreamingText(aiResponse, messageText, cursor);
+    } catch (error) {
+      console.error("Error:", error);
+
+      // Hide loading indicator
+      hideLoading();
+
+      // Show error message with streaming effect
+      const { messageText, cursor } = createAIMessageContainer();
+      await simulateStreamingText(
+        "Sorry, there was an error processing your request. Please try again.",
+        messageText,
+        cursor
+      );
     }
-
-    const data = await response.json();
-    const aiResponse = data.ai_response;
-
-    // Hide loading indicator
-    hideLoading();
-
-    // Create AI message container with cursor
-    const { messageText, cursor } = createAIMessageContainer();
-
-    // Simulate streaming text
-    await simulateStreamingText(aiResponse, messageText, cursor);
-  } catch (error) {
-    console.error("Error:", error);
-
-    // Hide loading indicator
-    hideLoading();
-
-    // Show error message with streaming effect
-    const { messageText, cursor } = createAIMessageContainer();
-    await simulateStreamingText(
-      "Sorry, there was an error processing your request. Please try again.",
-      messageText,
-      cursor
-    );
   }
-}
+
 
 // Event listeners
 sendButton.addEventListener("click", () => {
