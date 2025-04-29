@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sample task data for different dates
     const taskData = {
       // Format: "YYYY-MM-DD": { tasks: [...], completion: "X/Y" }
-      "2025-04-23": {
+      "2025-04-27": {
         completion: "7/10",
         tasks: [
           {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         ],
       },
-      "2025-04-24": {
+      "2025-04-28": {
         completion: "5/8",
         tasks: [
           {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         ],
       },
-      "2025-04-25": {
+      "2025-04-29": {
         completion: "3/5",
         tasks: [
           {
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         ],
       },
-      "2025-04-26": {
+      "2025-04-30": {
         completion: "2/6",
         tasks: [
           {
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         ],
       },
-      "2025-04-27": {
+      "2025-05-1": {
         completion: "4/7",
         tasks: [
           {
