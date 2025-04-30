@@ -9,8 +9,8 @@ const CSRF_TOKEN =
   "N8q096M9Cjb93GKTKQDd8FmMGGkIxPH8cjLzRUSGXCgck5Y3Qfiv7sybJYfbqjgC";
 
 // Streaming simulation settings
-const TYPING_SPEED_MIN = 20; // Minimum milliseconds per character
-const TYPING_SPEED_MAX = 40; // Maximum milliseconds per character
+const TYPING_SPEED_MIN = 1; // Minimum milliseconds per character
+const TYPING_SPEED_MAX = 10; // Maximum milliseconds per character
 
 // Local storage key for chat history
 const CHAT_HISTORY_KEY = "chat_history";
