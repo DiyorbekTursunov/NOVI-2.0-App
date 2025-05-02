@@ -137,8 +137,6 @@
   .hero-container {
     display: flex;
     flex-direction: column;
-    /* align-items: start; */
-
     gap: 15px;
     width: 100%;
     height: 100%;
