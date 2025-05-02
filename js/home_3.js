@@ -4,9 +4,8 @@ const messageInput = document.getElementById("message-input");
 const sendButton = document.getElementById("send-button");
 let isDisabled = false;
 
-
 // API constants
-const API_URL = "https://fix-cors-for-novi.vercel.app/api/proxy";
+const API_URL = "http://83.222.20.200:5000/ai";
 const CSRF_TOKEN =
   "N8q096M9Cjb93GKTKQDd8FmMGGkIxPH8cjLzRUSGXCgck5Y3Qfiv7sybJYfbqjgC";
 
@@ -219,7 +218,13 @@ async function sendMessage(message) {
   try {
     // Prepare the data to send as JSON
     const data = {
-      message: message,
+      messages: [
+        {
+          role: "user",
+          content: message,
+        },
+      ],
+      roomId: "681185bb93e8221377fb3996",
     };
 
     messageInput.setAttribute("disabled", "true");
@@ -234,12 +239,16 @@ async function sendMessage(message) {
       body: JSON.stringify(data), // Send data as JSON
     });
 
+
+
     if (!response.ok) {
       throw new Error(`API error: ${response.status}`);
     }
 
     const responseData = await response.json();
-    const aiResponse = responseData.ai_response;
+    const aiResponse = responseData.response;
+
+    console.log(aiResponse);
 
     // Hide loading indicator
     hideLoading();
@@ -311,9 +320,9 @@ function clearChatHistory() {
   );
 }
 
-const input = document.querySelector('.footer-input');
+const input = document.querySelector(".footer-input");
 
-input.addEventListener('focus', () => {
+input.addEventListener("focus", () => {
   // Delay to wait for the keyboard to open
   setTimeout(() => {
     container.scrollTop = container.scrollHeight;
