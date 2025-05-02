@@ -5,7 +5,7 @@ const sendButton = document.getElementById("send-button");
 let isDisabled = false;
 
 // API constants
-const API_URL = "http://83.222.20.200:5000/ai";
+const API_URL = "https://fix-cors-for-novi.vercel.app/api/proxy";
 const CSRF_TOKEN =
   "N8q096M9Cjb93GKTKQDd8FmMGGkIxPH8cjLzRUSGXCgck5Y3Qfiv7sybJYfbqjgC";
 
@@ -324,6 +324,8 @@ const input = document.querySelector(".footer-input");
 
 input.addEventListener("focus", () => {
   // Delay to wait for the keyboard to open
+  const container = document.querySelector(".hero-container");
+
   setTimeout(() => {
     container.scrollTop = container.scrollHeight;
   }, 300); // Adjust delay as needed (300-500ms is usually safe)
