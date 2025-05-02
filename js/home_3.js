@@ -2,6 +2,8 @@
 const chatContainer = document.getElementById("chat-container");
 const messageInput = document.getElementById("message-input");
 const sendButton = document.getElementById("send-button");
+let isDisabled = false;
+
 
 // API constants
 const API_URL = "https://fix-cors-for-novi.vercel.app/api/proxy";
@@ -220,6 +222,7 @@ async function sendMessage(message) {
       message: message,
     };
 
+    messageInput.setAttribute("disabled", "true");
     // Use fetch API to send the POST request
     const response = await fetch(API_URL, {
       method: "POST",
@@ -259,6 +262,8 @@ async function sendMessage(message) {
       messageText,
       cursor
     );
+  } finally {
+    messageInput.removeAttribute("disabled");
   }
 }
 
